@@ -1,61 +1,230 @@
-/* styles.css */
+/**
+ * styles.css
+ *
+ * @format
+ */
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+	font-family: "Roboto", sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+	color: #333;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
+	background: #333;
+	color: #fff;
+	padding: 1rem 0;
+	text-align: center;
 }
 
-header a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
+nav .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-header a:hover {
-    text-decoration: underline;
+nav h1 {
+	margin: 0;
 }
 
-section {
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	margin: 0 10px;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+	background: #575757;
+	border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+	display: none;
+}
+
+.menu-toggle input {
+	display: none;
+}
+.logo-mobile {
+    display: none;
+}
+.menu-toggle span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: #fff;
+	margin: 5px auto;
+	transition: background 0.3s ease;
+}
+.hamburger-button {
+    display: none;
+}
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .hamburger-button {
+        display: block;
+        color: white;
+        font-size: 30px;
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
+        z-index: 100;
+    }
+	.menu-toggle {
+		display: block;
+		cursor: pointer;
+	}
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    nav h1 {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block;
+    }
+
+    nav ul {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		position: absolute;
+		background-color: #333;
+		top: 0%;
+		left: 0;
+		margin-top: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+	}
+
+	nav ul.active {
+		display: none;
+	}
+    /* nav-links {
+        display: none;
+        z-index: 99;
+    } */
+	nav ul li {
+		margin: 10px 0;
+	}
+
+	nav ul li a {
+		padding: 1rem;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* .menu-toggle input:checked ~ ul {
+		display: block;
+	} */
+	/* .menu-toggle span {
+		background-color: #fff;
+		border-radius: 5px;
+	} */
+}
+
+.container {
+	max-width: 1100px;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}
+
+#intro {
+	background: #f4f4f4;
+	padding: 2rem 0;
+	text-align: center;
 }
 
 h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
+	border-bottom: 2px solid #333;
+	padding-bottom: 0.5rem;
 }
 
-.job, .education, .project {
-    margin-bottom: 1rem;
+section {
+	padding: 2rem 0;
+	margin: 1rem 0;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.job,
+.education,
+.project {
+	margin-bottom: 1.5rem;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 ul li {
-    padding: 0.5rem 0;
+	padding: 0.5rem 0;
+}
+
+.project a {
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.project a:hover {
+	color: #007bff;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+	text-align: center;
+	padding: 1rem 0;
+	background: #333;
+	color: #fff;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+section h2 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+	nav .container {
+		flex-direction: column;
+	}
+	nav ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav ul li {
+		margin: 5px 0;
+	}
 }
